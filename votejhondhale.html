@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online College Voting System</title>
+ <link rel="stylesheet" href="style.css">
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+ 
+</head>
+<body>
+  <div class="container">
+    <h1> Online College Voting System</h1>
+
+    <div class="box">
+      <form id="voteForm" onsubmit="return confirmVote()">
+        <label for="studentId"><b>Enter Your 5-digit Student ID:</b></label><br>
+        <input type="text" id="studentId" name="studentId" placeholder="e.g., 12345" required pattern="\d{5}">
+
+
+        <label for="candidateSelect"><b>Select Your Candidate:</b></label><br>
+        <select id="candidateSelect" name="candidate" required>
+          <option value="">-- Choose a Candidate --</option>
+          <option value="Vishal Bhoir">Vishal Bhoir - Visionary Leader</option>
+          <option value="Tejas Dalvi">Tejas Dalvi - Inclusive Innovator</option>
+          <option value="Rohit Bhatkar">Rohit Bhatkar - Resilient Achiever</option>
+          <option value="Prathmesh Hadkar">Prathmesh Hadkar - Strategic Thinker</option>
+        </select>
+
+        <div class="candidates">
+          <div class="candidate" onclick="selectCandidate('Vishal Bhoir')">
+            <img src="logo1.png.jpg" alt="Vishal Bhoir">
+            <label><b>Vishal Bhoir:</b> Visionary Leader</label>
+          </div>
+          <div class="candidate" onclick="selectCandidate('Tejas Dalvi')">
+            <img src="logo2.png.jpg" alt="Tejas Dalvi">
+            <label><b>Tejas Dalvi:</b> Inclusive Innovator</label>
+          </div>
+          <div class="candidate" onclick="selectCandidate('Rohit Bhatkar')">
+            <img src="logo3.png.jpg" alt="Rohit Bhatkar">
+            <label><b>Rohit Bhatkar:</b> Resilient Achiever</label>
+          </div>
+          <div class="candidate" onclick="selectCandidate('Prathmesh Hadkar')">
+            <img src="logo4.png.jpg" alt="Prathmesh Hadkar">
+            <label><b>Prathmesh Hadkar:</b> Strategic Thinker</label>
+          </div>
+        </div>
+
+        <br>
+        <button type="submit">Proceed to Vote</button>
+        <button type="button" onclick="viewResults()" style="margin-top: 10px; background-color: #007BFF;">View Results</button>
+      </form>
+
+      <div id="messageBox"></div>
+      <div id="resultBox" style="display: none; margin-top: 15px;"></div>
+
+    </div>
+
+    <footer>
+      © 2025 Mumbai University | All Rights Reserved.
+    </footer>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>
